@@ -6,7 +6,7 @@ import {Component, Input, Output, EventEmitter} from '@angular/core';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent {
-  @Input() listObj: object;
+  @Input() listObj: any;
   @Output() newTask = new EventEmitter();
   newTaskText: string;
   addNewTask() {
