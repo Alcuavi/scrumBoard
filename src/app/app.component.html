@@ -1,5 +1,5 @@
 <header>
-  <input type="text" placeholder="add list">
+  <input type="text" placeholder="add list" [(ngModel)]="newListText" (keyup.enter)="addList()">
 </header>
 
 <section class="lists">

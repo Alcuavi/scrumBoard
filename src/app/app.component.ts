@@ -38,4 +38,17 @@ export class AppComponent {
       ]
     }
   ];
+  newListText: string;
+  addList(){
+    const newName = this.newListText.trim();
+    if(newName !== ''){
+      const newList = {
+        name: newName,
+        tasks:[]
+      }
+      this.lists.push( newList )
+      this.newListText = '';
+    }
+    }
 }
+
