@@ -8,12 +8,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
   lists = JSON.parse(localStorage.getItem('lists'))  || [];
   newListText: string;
-  addList(){
+  addList() {
     const newName = this.newListText.trim();
-    if(newName !== ''){
+    if (newName !== '') {
       const newList = {
         name: newName,
-        tasks:[]
+        tasks: []
       };
       this.lists.push( newList );
       localStorage.setItem('lists', JSON.stringify(this.lists));
