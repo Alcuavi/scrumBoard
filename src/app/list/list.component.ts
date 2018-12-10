@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import {Component, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'list',
@@ -7,4 +7,13 @@ import { Component, Input } from '@angular/core';
 })
 export class ListComponent {
   @Input() listObj: object;
+  @Output() newTask = new EventEmitter();
+  newTaskText: string;
+  addNewTask() {
+    const text = this.newTaskText.trim();
+    if (text !== '') {
+      this.newTask.emit(this.newTaskText);
+      this.newTaskText = '';
+    }
+  }
 }
