@@ -6,5 +6,36 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'scrumBoard';
+  lists = [
+    {
+      name: 'to do',
+      tasks: [
+        {
+          text: 'Aprender angular router'
+        }
+      ]
+    },
+    {
+      name: 'doing',
+      tasks: [
+        {
+          text: 'Aprender angular components'
+        },
+        {
+          text: 'Aprender react'
+        },
+        {
+          text: 'Aprender vue'
+        }
+      ]
+    },
+    {
+      name: 'done',
+      tasks: [
+        {
+          text: 'Aprender jquery'
+        }
+      ]
+    }
+  ];
 }
