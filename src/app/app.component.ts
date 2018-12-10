@@ -6,38 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  lists = [
-    {
-      name: 'to do',
-      tasks: [
-        {
-          text: 'Aprender angular router'
-        }
-      ]
-    },
-    {
-      name: 'doing',
-      tasks: [
-        {
-          text: 'Aprender angular components'
-        },
-        {
-          text: 'Aprender react'
-        },
-        {
-          text: 'Aprender vue'
-        }
-      ]
-    },
-    {
-      name: 'done',
-      tasks: [
-        {
-          text: 'Aprender jquery'
-        }
-      ]
-    }
-  ];
+  lists = JSON.parse(localStorage.getItem('lists'))  || [];
   newListText: string;
   addList(){
     const newName = this.newListText.trim();
@@ -45,8 +14,9 @@ export class AppComponent {
       const newList = {
         name: newName,
         tasks:[]
-      }
-      this.lists.push( newList )
+      };
+      this.lists.push( newList );
+      localStorage.setItem('lists', JSON.stringify(this.lists));
       this.newListText = '';
     }
     }
