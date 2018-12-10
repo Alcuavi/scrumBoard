@@ -8,20 +8,37 @@ import { Component } from '@angular/core';
 export class AppComponent {
   lists = JSON.parse(localStorage.getItem('lists'))  || [];
   newListText: string;
+  generateId() {
+    return `${Date.now()}-${Math.random()}`;
+  }
+  saveModel() {
+    localStorage.setItem('lists', JSON.stringify(this.lists));
+  }
   addList() {
     const newName = this.newListText.trim();
     if (newName !== '') {
       const newList = {
+        id: this.generateId(),
         name: newName,
         tasks: []
       };
       this.lists.push( newList );
-      localStorage.setItem('lists', JSON.stringify(this.lists));
+      this.saveModel();
       this.newListText = '';
     }
   }
   addTask(event) {
-    console.log(event);
+    this.lists.forEach(list => {
+      if (list.id === event.listId) {
+        const newTask = {
+          text: event.text,
+          id: this.generateId(),
+          listId: event.listId
+        };
+        list.tasks.push(newTask);
+      }
+    })
+    this.saveModel();
   }
 }
 

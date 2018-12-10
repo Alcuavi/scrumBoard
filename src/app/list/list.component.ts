@@ -12,7 +12,12 @@ export class ListComponent {
   addNewTask() {
     const text = this.newTaskText.trim();
     if (text !== '') {
-      this.newTask.emit(this.newTaskText);
+      this.newTask.emit(
+        {
+          text,
+          listId: this.listObj.id
+        }
+      );
       this.newTaskText = '';
     }
   }
