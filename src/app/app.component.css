@@ -19,17 +19,3 @@ header{
   flex: 1;
 }
 
-.list{
-  background: white;
-  padding: 2em;
-  margin: 1em;
-  border-radius: 5%;
-}
-
-.tasks{
-  margin: 1em 0;
-}
-
-.task{
-  margin: 0.5em 0;
-}

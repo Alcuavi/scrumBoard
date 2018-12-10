@@ -4,20 +4,7 @@
 
 <section class="lists">
 
-  <div class="list" *ngFor= "let list of lists">
-
-    <h4>{{list.name}}</h4>
-
-    <div class="tasks">
-
-      <div class="task" *ngFor="let task of list.tasks">
-        {{task.text}}
-      </div>
-
-    </div>
-
-    <input class="addTask" type="text" placeholder="add task">
-
-  </div>
+  <list *ngFor="let list of lists"  [listObj]="list"></list>
 
 </section>
+

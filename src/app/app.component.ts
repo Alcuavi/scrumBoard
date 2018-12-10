@@ -19,6 +19,6 @@ export class AppComponent {
       localStorage.setItem('lists', JSON.stringify(this.lists));
       this.newListText = '';
     }
-    }
+  }
 }
 

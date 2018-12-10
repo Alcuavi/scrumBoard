@@ -1,0 +1,15 @@
+<div class="list">
+
+  <h4>{{listObj.name}}</h4>
+
+  <div class="tasks">
+
+    <div class="task" *ngFor="let task of listObj.tasks">
+      {{task.text}}
+    </div>
+
+  </div>
+
+  <input class="addTask" type="text" placeholder="add task">
+
+</div>
