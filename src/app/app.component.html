@@ -9,7 +9,8 @@
 
   <list *ngFor="let list of lists"
         [listObj]="list"
-        (newTask)="addTask($event)"></list>
+        (newTask)="addTask($event)"
+        (removeListByID)="removeList($event)"></list>
 
 </section>
 

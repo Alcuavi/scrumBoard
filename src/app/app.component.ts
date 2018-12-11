@@ -37,8 +37,11 @@ export class AppComponent {
         };
         list.tasks.push(newTask);
       }
-    })
+    });
     this.saveModel();
+  }
+  removeList(id) {
+    this.lists = this.lists.filter( list => list.id !== id);
   }
 }
 

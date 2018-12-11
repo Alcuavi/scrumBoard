@@ -5,6 +5,14 @@
   margin: 1em;
   border-radius: 5%;
 }
+.name{
+  display: flex;
+  justify-content: space-between;
+}
+.removeList{
+  cursor: pointer;
+  font-size: 0.8em;
+}
 
 .tasks{
   margin: 1em 0;

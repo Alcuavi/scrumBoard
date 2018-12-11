@@ -1,10 +1,13 @@
 <div class="list">
 
-  <h4>{{listObj.name}}</h4>
+  <h4 class="name"> {{listObj.name}} <span class="removeList" (click)="emitToRemoveList()"> 🗑️ </span> </h4>
+
+
 
   <div class="tasks">
 
-    <div class="task" *ngFor="let task of listObj.tasks">
+    <div class="task"
+         *ngFor="let task of listObj.tasks">
       {{task.text}}
     </div>
 
