@@ -42,6 +42,7 @@ export class AppComponent {
   }
   removeList(id) {
     this.lists = this.lists.filter( list => list.id !== id);
+    this.saveModel();
   }
   removeTask(taskObj) {
     this.lists = this.lists.map( list => {
@@ -50,6 +51,7 @@ export class AppComponent {
       }
       return list;
     });
+    this.saveModel();
   }
 }
 
