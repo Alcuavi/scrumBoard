@@ -1,5 +1,4 @@
-
 <div class="task">
     {{taskObj.text}}
-    <span class="removeTask" (click)="emitToRemoveTask(taskObj)"> 🗑️ </span>
+    <remove-button (action)="emitToRemoveTask()"></remove-button>
 </div>

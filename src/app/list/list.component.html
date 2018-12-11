@@ -1,18 +1,11 @@
 <div class="list">
 
-  <h4 class="name"> {{listObj.name}} <span class="removeList" (click)="emitToRemoveList()"> 🗑️ </span> </h4>
+  <h4 class="name"> {{listObj.name}} <remove-button (action)="emitToRemoveList()"></remove-button> </h4>
 
 
 
   <div class="tasks">
     <task *ngFor="let task of listObj.tasks" [taskObj]="task" (removeTaskByObj)="emitToRemoveTask($event)"></task>
-    <!--
-    <div class="task"
-         *ngFor="let task of listObj.tasks">
-      {{task.text}}
-      <span class="removeTask" (click)="emitToRemoveTask(task)"> 🗑️ </span>
-    </div>
-    -->
   </div>
 
   <input class="addTask"
