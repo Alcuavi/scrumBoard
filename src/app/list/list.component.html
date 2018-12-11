@@ -9,6 +9,7 @@
     <div class="task"
          *ngFor="let task of listObj.tasks">
       {{task.text}}
+      <span class="removeTask" (click)="emitToRemoveTask(task)"> 🗑️ </span>
     </div>
 
   </div>

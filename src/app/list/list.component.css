@@ -13,11 +13,24 @@
   cursor: pointer;
   font-size: 0.8em;
 }
+.removeTask{
+  cursor: pointer;
+  font-size: 0.5em;
+  opacity: 0;
+  transition: all 500ms
+}
 
 .tasks{
   margin: 1em 0;
 }
+.task:hover .removeTask {
+  opacity: 1;
+
+}
 
 .task{
   margin: 0.5em 0;
+  display: flex;
+  justify-content: space-between;
 }
+

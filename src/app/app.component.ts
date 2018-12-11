@@ -43,5 +43,13 @@ export class AppComponent {
   removeList(id) {
     this.lists = this.lists.filter( list => list.id !== id);
   }
+  removeTask(taskObj) {
+    this.lists = this.lists.map( list => {
+      if (list.id === taskObj.listId) {
+        list.tasks = list.tasks.filter( task => task.id !== taskObj.id);
+      }
+      return list;
+    });
+  }
 }
 

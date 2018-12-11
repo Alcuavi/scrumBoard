@@ -9,6 +9,7 @@ export class ListComponent {
   @Input() listObj: any;
   @Output() newTask = new EventEmitter();
   @Output() removeListByID = new EventEmitter();
+  @Output() removeTaskByID = new EventEmitter();
   newTaskText: string;
   addNewTask() {
     const text = this.newTaskText.trim();
@@ -24,5 +25,8 @@ export class ListComponent {
   }
   emitToRemoveList() {
     this.removeListByID.emit(this.listObj.id);
+  }
+  emitToRemoveTask(task) {
+    this.removeTaskByID.emit(task);
   }
 }
