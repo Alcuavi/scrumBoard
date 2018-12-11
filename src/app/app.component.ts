@@ -53,5 +53,11 @@ export class AppComponent {
     });
     this.saveModel();
   }
+  removeAllLists() {
+      if (confirm('¿Estás seguro?')) {
+        this.lists = [];
+        this.saveModel();
+      }
+  }
 }
 

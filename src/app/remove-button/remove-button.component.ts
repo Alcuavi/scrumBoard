@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'remove-button',
@@ -7,7 +7,9 @@ import { Component, Output, EventEmitter } from '@angular/core';
 })
 export class RemoveButtonComponent {
   @Output() action = new EventEmitter();
+  @Input() text: string;
   emitAction() {
     this.action.emit();
   }
 }
+

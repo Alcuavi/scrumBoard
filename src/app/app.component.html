@@ -3,6 +3,7 @@
          placeholder="add list"
          [(ngModel)]="newListText"
          (keyup.enter)="addList()">
+  <remove-button (action)="removeAllLists()" text="Borrar Todo"></remove-button>
 </header>
 
 <section class="lists">
