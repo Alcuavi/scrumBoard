@@ -5,14 +5,14 @@
 
 
   <div class="tasks">
-
-
+    <task *ngFor="let task of listObj.tasks" [taskObj]="task" (removeTaskByObj)="emitToRemoveTask($event)"></task>
+    <!--
     <div class="task"
          *ngFor="let task of listObj.tasks">
       {{task.text}}
       <span class="removeTask" (click)="emitToRemoveTask(task)"> 🗑️ </span>
     </div>
-
+    -->
   </div>
 
   <input class="addTask"

@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
-  selector: 'app-task',
+  selector: 'task',
   templateUrl: './task.component.html',
   styleUrls: ['./task.component.css']
 })
-export class TaskComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+export class TaskComponent {
+  @Input() taskObj: any;
+  @Output() removeTaskByObj = new EventEmitter();
+  emitToRemoveTask() {
+    this.removeTaskByObj.emit(this.taskObj);
   }
-
 }
+
+
